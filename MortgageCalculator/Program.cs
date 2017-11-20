@@ -1,7 +1,7 @@
 ﻿/**********************************
  *MortgageCalculator.CS
  *J.Thatcher
- *Console app with a few methods re:Mortgages
+ *Fields, Methods, Recursive Method, Iteration, Output to Console...
  **********************************/
 
  using System;
@@ -79,7 +79,7 @@ namespace MortgageCalculator
              *      
              *A(N)  = A0(1+r)^N - I*(1+ (1+r) + (1+r)^2 + (1+r)^3 + (1+r)^(N-1))        //Factor out I...Polynomial Pattern 1 + X + X^2....X^N-1
              * 
-             *        NOTE: P(x) = 1 + X + X^2 + X^3 + ... + X^(N-1) can be expressed as X^N - 1 / X - 1    
+             *        NOTE: P(x) = 1 + X + X^2 + X^3 + ... + X^(N-1) can be expressed as X^N - 1 / X - 1; where x = (1+r)    
              * 
              *A(N) = A0(1+r)^N - I ( (1+r)^N - 1 / (1+r) - 1)       ////Sub....Simplify. . .
              */
@@ -121,6 +121,8 @@ namespace MortgageCalculator
 
             Console.WriteLine("\n\n" + String.Format("{0,-20}{1,-20}{2,-20}{3,-20}{4,-20}", "Payment#","Payment","Interest","Principal","Balance"));
             Console.WriteLine(String.Format("{0,-20}{1,-20}{2,-20}{3,-20}{4,-20}", "**********", "**********", "**********", "**********", "**********"));
+
+            //Simple loop to write mortgage table values
 
             for (int i = 1; i < N+1; i++)
             {
